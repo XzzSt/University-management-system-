@@ -1,0 +1,65 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to University Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 700px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #5c5c5c;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #336699;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #263d57;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="{{ url_for('static', filename='TAMU.png') }}"  width="150"> <!-- Update path to logo -->
+        <h1>Welcome to the University Management System</h1>
+        <ul>
+            <li><a href="/add_student">Add a New Student</a></li>
+            <li><a href="/search_scores">Search Score</a></li>
+            <li><a href="/search_course">Search Professor of a Course</a></li>
+            <li><a href="/add_professor">Add a New Professor</a></li>
+            <li><a href="/search_course_info">Search course information</a></li>
+        </ul>
+    </div>
+</body>
+</html>

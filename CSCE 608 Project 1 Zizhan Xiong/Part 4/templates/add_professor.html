@@ -1,0 +1,47 @@
+<!-- add_professor.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Professor</title>
+</head>
+<body>
+    <h1>Add New Professor</h1>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div id="flash-messages">
+          {% for category, message in messages %}
+            <div class="flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Professor Form -->
+    <form action="{{ url_for('add_professor') }}" method="POST">
+
+        <label for="prof_uin">Professor UIN:</label>
+        <input type="text" id="prof_uin" name="prof_uin" required>
+        
+        <label for="prof_name">Professor Name:</label>
+        <input type="text" id="prof_name" name="prof_name" required>
+        
+        <label for="department_name">Department Name:</label>
+        <input type="text" id="department_name" name="department_name" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <!-- Add other gender options as needed -->
+        </select>
+        
+        <button type="submit">Add Professor</button>
+    </form>
+</body>
+</html>

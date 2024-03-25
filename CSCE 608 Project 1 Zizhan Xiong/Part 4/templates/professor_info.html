@@ -1,0 +1,20 @@
+<!-- professor_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professor Information</title>
+</head>
+<body>
+    <h1>Professor Information</h1>
+    {% if professor %}
+        <p>Name: {{ professor.profname }}</p>
+        <p>Department: {{ professor.departmentname}}</p>
+        <p>Age: {{ professor.age }}</p>
+        <p>Gender: {{ professor.gender }}</p>
+    {% else %}
+        <p>No information available.</p>
+    {% endif %}
+    <a href="{{ url_for('search_course') }}">Back to Search</a>
+</body>
+</html>

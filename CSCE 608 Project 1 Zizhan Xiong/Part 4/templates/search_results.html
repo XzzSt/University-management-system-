@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if student_scores %}
+        <table>
+            <thead>
+                <tr>
+                    <th>UIN</th>
+                    <th>Student Name</th>
+                    <th>Course ID</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in student_scores %}
+                    <tr>
+                        <td>{{ record.student.uin }}</td>
+                        <td>{{ record.student.stuname }}</td>
+                        <td>{{ record.courseid }}</td>
+                        <td>{{ record.score }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+    <a href="{{ url_for('search_scores') }}">Back to Search</a>
+</body>
+</html>
+

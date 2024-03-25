@@ -1,0 +1,23 @@
+<!-- course_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Information</title>
+</head>
+<body>
+    <h1>Course Information</h1>
+    {% if course %}
+        <p>Course ID: {{ course.courseid }}</p>
+        <p>Credit: {{ course.credit }}</p>
+        <p>CRN: {{ course.crn }}</p>
+        <p>Department: {{ course.department }}</p>
+        <p>Start Date: {{ course.start_date }}</p>
+        <!-- Include other fields as necessary -->
+    {% else %}
+        <p>No information available for this course.</p>
+    {% endif %}
+    <a href="{{ url_for('search_course_info') }}">Search Another Course</a>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!-- templates/add_student.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add New Student</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    
+    <form action="{{ url_for('add_student') }}" method="post">
+        <label for="uin">UIN:</label>
+        <input type="number" id="uin" name="uin" required><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="birth_year">Birth Year:</label>
+        <input type="number" id="birth_year" name="birth_year" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="major">Major:</label>
+        <input type="text" id="major" name="major" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
